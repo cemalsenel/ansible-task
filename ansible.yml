@@ -43,7 +43,7 @@
         name: python3-pip
         state: present
         
-    - name: Install docker sdk
+    - name: Install docker sdk and docker-compose
       pip:
         name: 
           - docker
@@ -71,7 +71,7 @@
     #     - docker_compose_check.msg is defined
     #     - docker_compose_check.msg.find('No such file or directory') != -1
 
-    - name: copy docker-compose.yml
+    - name: copy source files of app
       copy:
         src: app/
         dest: tmp/
