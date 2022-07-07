@@ -80,19 +80,23 @@
       community.docker.docker_compose:
         project_src: tmp/
         state: present
+        env_file: ~/tmp/app/.env
+    
 
-    - name: Allow everything and enable UFW
-      community.general.ufw:
-        state: enabled
-        policy: allow
+
+
+    # - name: Allow everything and enable UFW
+    #   community.general.ufw:
+    #     state: enabled
+    #     policy: allow
         
-    - name: Allow all access to tcp port 3000
-      community.general.ufw:
-        rule: allow
-        port: '{{ item }}'
-        proto: tcp
-      loop:
-        - 3000
+    # - name: Allow all access to tcp port 3000
+    #   community.general.ufw:
+    #     rule: allow
+    #     port: '{{ item }}'
+    #     proto: tcp
+    #   loop:
+    #     - 3000
 
 
 
